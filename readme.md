@@ -1,6 +1,6 @@
-# The Name of My App
+# Stock Checker
 
-Today we will be talking about my project:
+This is an application to check the stock price of any public company, and whether the stock is trending up or down.
 
 ### Technologies used:
 
@@ -11,15 +11,20 @@ Today we will be talking about my project:
 
 ### Wireframes
 
-![Wireframe](https://www.fourpaws.com/-/media/Project/OneWeb/FourPaws/Images/articles/family-matters/puppy-prep-cheat-sheet/puppy-australian-shepherd-running.jpg)
+![Wireframe Homepage](https://i.imgur.com/kDdfyO2.jpeg)
+![Wireframe Stock Result](https://i.imgur.com/aIshnqc.jpg)
 
 ### Daily Plan
 
 | Day | Goal |
 |-----|------|
-| 1 | Choose API |
+| 1 | Choose API / Learn full API functionality |
 | 2 | Render data to screen |
 | 3 | Create form |
+| 4 | Bug testing, add trend functionality and last checked stocks history |
+| 5 | Website Styling |
+| 6 | Final debugging and styling |
+| 7 | Presentation Day |
 
 ### Link to Project
 [My Project Live Page](https://www.google.com)
