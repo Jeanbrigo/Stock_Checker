@@ -27,5 +27,5 @@ This is an application to check the stock price of any public company, and wheth
 | 7 | Presentation Day |
 
 ### Link to Project
-[My Project Live Page](https://www.google.com)
+[My Project Live Page](https://jeanbrigo.github.io/Project-1/)
 
