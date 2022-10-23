@@ -1,0 +1,20 @@
+#hideInfo {
+    display: none;
+  }
+  
+#price:hover + #hideInfo{
+   
+    display: inline;
+  }
+
+#fourWeeks {
+    display: none;
+}
+
+#trending:hover + #fourWeeks {
+    display: inline;
+}
+
+div {
+    display: block;
+}
