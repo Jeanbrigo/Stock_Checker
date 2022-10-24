@@ -142,7 +142,7 @@ function stockChecker(stock){
 
 // object to hold application data
 const data = {
-    todos: ["GME","AAPL","TSLA","META","MSFT"]
+    todos: []
 }
 
 // object to hold main dom nodes
