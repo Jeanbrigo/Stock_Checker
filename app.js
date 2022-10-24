@@ -170,7 +170,7 @@ function loadTodos() {
     console.log(json)
     if(json.todos.length !== 0){
         // parse json string into JS object
-        const savedData = JSON.parse(json)
+        const savedData = json
         // update data with the saved array
         data.todos = savedData.todos.slice(0,5)
     }
