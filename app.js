@@ -215,6 +215,7 @@ $("input[type=submit]").on("click", (event) => {
 
     // grab text from input box
     const inputText = $("input[type=text]").val()
+    console.log(inputText)
 
     // update the screen
     stockChecker(inputText)
