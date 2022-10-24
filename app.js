@@ -184,12 +184,12 @@ function renderTodos(){
         $todoDiv.text(todo) // adds to the div the text from the data.todos at the [todo] number
         $nodes.div.append($todoDiv) //adds it to the div
      
-        // add click event to reload with previous
+        // add click event to reload with previous stock
         $todoDiv.on("click", function(event){
             // get the text of the thing
             const text = $(event.target).text()// wrap this node in jQuery object
-            $todoDiv.on("click", 
-                stockChecker(text))
+            
+            stockChecker(text)
             // get the text of the thing
             renderTodos()
             
