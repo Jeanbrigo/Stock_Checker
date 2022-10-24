@@ -206,9 +206,9 @@ function renderTodos(){
                 stockChecker(text)
             // get the text of the thing
             )
-        
+            renderTodos()
         })    
-
+    
     }
     saveTodos()
 }
