@@ -69,12 +69,12 @@ function stockChecker(stock){
 
 
     const latestDayInfo = JSON.stringify(stock["Time Series (Daily)"][lastInput]);
-console.log(latestDayInfo)
+    console.log(latestDayInfo)
     const latestDayInfoClean = latestDayInfo.replace(/"/g," ")
 
     // console.log(stock["Weekly Time Series"][lastWeek]["4.close"])
 
-    console.log(stock)
+    // console.log(stock)
     // console.log(stock["Time Series (Daily)"][lastInput]["4. close"])
 
     const $main = $("main")
@@ -85,26 +85,46 @@ console.log(latestDayInfo)
         <h5 id="hideInfo">Stock Info: ${latestDayInfoClean}</h5>
         `)
         if(trendMonthPrice < lastPrice){ 
-            const $main = $("main")
-                //$main.empty()
                 $main.append(`
                 <h2 id="trending">Trending <span style="color: green">Upwards</span></h2>
                 `)}
         else if(trendMonthPrice > lastPrice) { 
-            const $main = $("main")
                 $main.append(`
                 <h2 id="trending">Trending <span style="color: red">Downwards</span></h2>
                 `)}
         else{
-            const $main = $("main")
                 $main.append(`<h2 id="trending">Trending Same as Previous</h2>`)
             }   
         $main.append(`
-        <h5 id=fourWeeks> 4 Weeks Ago: $${last4WeekPrice} /
-        3 Weeks Ago: $${last3WeekPrice} /
-        2 Weeks Ago: $${last2WeekPrice} /
-        1 Week Ago: $${lastWeekPrice}</h5>`
+        <h5 id=fourWeeks> <span id=fourWeeksAgo>4 Weeks Ago: $${last4WeekPrice}</span> /
+        <span id=threeWeeksAgo>3 Weeks Ago: $${last3WeekPrice}</span> /
+        <span id=twoWeeksAgo>2 Weeks Ago: $${last2WeekPrice}</span> /
+        <span id=oneWeekAgo>1 Week Ago: $${lastWeekPrice}</span></h5>`
         )
+        if(last4WeekPrice > lastPrice) {
+            document.getElementById("fourWeeksAgo").style.color = "green"
+        }
+        else if(last4WeekPrice < lastPrice){
+            document.getElementById("fourWeeksAgo").style.color = "red"
+        }
+        if(last3WeekPrice > lastPrice) {
+            document.getElementById("threeWeeksAgo").style.color = "green"
+        }
+        else if(last3WeekPrice < lastPrice){
+            document.getElementById("threeWeeksAgo").style.color = "red"
+        }
+        if(last2WeekPrice > lastPrice) {
+            document.getElementById("twoWeeksAgo").style.color = "green"
+        }
+        else if(last2WeekPrice < lastPrice){
+            document.getElementById("twoWeeksAgo").style.color = "red"
+        }
+        if(lastWeekPrice > lastPrice) {
+            document.getElementById("oneWeekAgo").style.color = "green"
+        }
+        else if(lastWeekPrice < lastPrice){
+            document.getElementById("oneWeekAgo").style.color = "red"
+        }
 })
 .catch(err=>console.log(err)) 
 };
