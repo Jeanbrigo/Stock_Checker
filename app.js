@@ -161,15 +161,17 @@ function saveTodos() {
 // function for loading todos from local storage
 function loadTodos() {
     // get data from local storage
-    const json = localStorage.getItem("tickerSearch")
+    const json = JSON.parse(localStorage.getItem("tickerSearch"))
     // update data if json isn't undefined/falsey
-    if(json){
+    console.log(json)
+    if(json.todos.length === 0){
         // parse json string into JS object
         const savedData = JSON.parse(json)
         // update data with the saved array
         data.todos = savedData.todos.slice(0,5)
     }
 }
+
 
 
 
