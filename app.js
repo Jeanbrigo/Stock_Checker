@@ -132,21 +132,7 @@ function stockChecker(stock){
 };
 
 
-// Submission operators
 
-$("input[type=submit]").on("click", (event) => {
-
-    //prevent the refresh
-    event.preventDefault()
-
-    // grab text from input box
-    const inputText = $("input[type=text]").val()
-
-    // update the screen
-    stockChecker(inputText)
-    addTodo(inputText)
-});
- 
 
 // ------------------
 // History Generator
@@ -220,6 +206,22 @@ function addTodo(newTodo){
     renderTodos() // runs the renderTodos function after
 }
 
+// Submission operators
+
+$("input[type=submit]").on("click", (event) => {
+
+    //prevent the refresh
+    event.preventDefault()
+
+    // grab text from input box
+    const inputText = $("input[type=text]").val()
+
+    // update the screen
+    stockChecker(inputText)
+    addTodo(inputText)
+});
+ 
 
 loadTodos()
 renderTodos()
+
