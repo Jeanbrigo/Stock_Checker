@@ -26,6 +26,8 @@ function stockChecker(stock){
 
     // get the date of the last weeks reporting. original code source: http://bluegalaxy.info/codewalk/2018/04/27/javascript-add-subtract-days-iso-date-time-strings/
 
+    const lastDayInput = new Date(lastInput).toISOString().slice(0, 10)
+
     const lastWeekInput = new Date(lastInput); // get the date of the report one week from last one
     let lastWeek = lastWeekInput.setDate(lastWeekInput.getDate() - 7);
     lastWeek = new Date(lastWeek).toISOString().slice(0, 10);
@@ -49,7 +51,7 @@ function stockChecker(stock){
 
     // Price returns (Last price, Last week price, last 2 week price...)
 
-    const lastPrice = parseFloat(stock["Time Series (Daily)"][lastInput]["4. close"]);
+    const lastPrice = parseFloat(stock["Time Series (Daily)"][lastDayInput]["4. close"]);
     console.log(lastPrice);
 
     const lastWeekPrice = parseFloat(stock["Time Series (Daily)"][lastWeek]["4. close"]);
@@ -70,7 +72,7 @@ function stockChecker(stock){
     // console.log(trendMonthPrice)
 
 
-    const latestDayInfo = JSON.stringify(stock["Time Series (Daily)"][lastInput]);
+    const latestDayInfo = JSON.stringify(stock["Time Series (Daily)"][lastDayInput]);
     console.log(latestDayInfo)
     const latestDayInfoClean = latestDayInfo.replace(/"/g," ")
 
