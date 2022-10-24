@@ -164,7 +164,7 @@ function loadTodos() {
     const json = localStorage.getItem("tickerSearch")
     // update data if json isn't undefined/falsey
     console.log(json)
-    if(json.todos.length === 0){
+    if(json.todos.length !== 0){
         // parse json string into JS object
         const savedData = JSON.parse(json)
         // update data with the saved array
