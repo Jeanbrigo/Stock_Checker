@@ -18,6 +18,8 @@ function stockChecker(stock){
 
     request.then((stock) => {
 
+    const symbol = stock["Meta Data"]["2. Symbol"]
+
     const lastInput = stock["Meta Data"]["3. Last Refreshed"] // Get the date of the most current report
     // console.log(lastInput)
 
@@ -80,13 +82,13 @@ function stockChecker(stock){
     const $main = $("main")
         $main.empty()
         $main.html(`
-        <h1>${stock["Meta Data"]["2. Symbol"]}</h1>
+        <h1 id="symbol">${symbol}</h1>
         <h2 id="price"> Current Price: $${lastPrice}</h2>
         <h5 id="hideInfo">Stock Info: ${latestDayInfoClean}</h5>
         `)
         if(trendMonthPrice < lastPrice){ 
                 $main.append(`
-                <h2 id="trending">Trending <span style="color: green">Upwards</span></h2>
+                <h2 id="trending">Trending <span style="color: rgb(111,244,74)">Upwards</span></h2>
                 `)}
         else if(trendMonthPrice > lastPrice) { 
                 $main.append(`
@@ -102,25 +104,25 @@ function stockChecker(stock){
         <span id=oneWeekAgo>1 Week Ago: $${lastWeekPrice}</span></h5>`
         )
         if(last4WeekPrice > lastPrice) {
-            document.getElementById("fourWeeksAgo").style.color = "green"
+            document.getElementById("fourWeeksAgo").style.color = "rgb(111,244,74)"
         }
         else if(last4WeekPrice < lastPrice){
             document.getElementById("fourWeeksAgo").style.color = "red"
         }
         if(last3WeekPrice > lastPrice) {
-            document.getElementById("threeWeeksAgo").style.color = "green"
+            document.getElementById("threeWeeksAgo").style.color = "rgb(111,244,74)"
         }
         else if(last3WeekPrice < lastPrice){
             document.getElementById("threeWeeksAgo").style.color = "red"
         }
         if(last2WeekPrice > lastPrice) {
-            document.getElementById("twoWeeksAgo").style.color = "green"
+            document.getElementById("twoWeeksAgo").style.color = "rgb(111,244,74)"
         }
         else if(last2WeekPrice < lastPrice){
             document.getElementById("twoWeeksAgo").style.color = "red"
         }
         if(lastWeekPrice > lastPrice) {
-            document.getElementById("oneWeekAgo").style.color = "green"
+            document.getElementById("oneWeekAgo").style.color = "rgb(111,244,74)"
         }
         else if(lastWeekPrice < lastPrice){
             document.getElementById("oneWeekAgo").style.color = "red"
@@ -142,4 +144,87 @@ $("input[type=submit]").on("click", (event) => {
 
     // update the screen
     stockChecker(inputText)
+    addTodo($("input[type=text]").val())
 });
+ 
+
+// ------------------
+// History Generator
+// ------------------
+
+// object to hold application data
+const data = {
+    todos: []
+}
+
+// object to hold main dom nodes
+
+const $nodes = {
+    div: $("div.todos"),
+    form: $("form"),
+    textInput: $("input[type='text']"),
+}
+
+// function that saves the todos in local storage / you can only store strings in local storage
+function saveTodos() {
+    // turn the data obnject into a JSON
+    const json = JSON.stringify(data) //stringify turns the input into a string
+    localStorage.setItem("tickerSearch", json) // saves the string in local storage
+}
+
+// function for loading todos from local storage
+function loadTodos() {
+    // get data from local storage
+    const json = localStorage.getItem("tickerSearch")
+    // update data if json isn't undefined/falsey
+    if(json){
+        // parse json string into JS object
+        const savedData = JSON.parse(json)
+        // update data with the saved array
+        data.todos = savedData.todos.slice(0,5)
+    }
+}
+
+
+
+// function that renders todos to the div
+function renderTodos(){
+
+    //empty out the div before rendering
+    $nodes.div.empty()
+
+    for(let todo of data.todos){
+        const $todoDiv = $("<div>").addClass("todo") //creates a div in the loop with class todo
+        $todoDiv.text(todo) // adds to the div the text from the data.todos at the [todo] number
+        $nodes.div.append($todoDiv) //adds it to the div
+     
+        // add click event to reload with previous
+        $todoDiv.on("click", function(event){
+            // get the text of the thing
+            const text = $(event.target).text()// wrap this node in jQuery object
+            $todoDiv.on("click", 
+                stockChecker(text)
+            // get the text of the thing
+            )
+        
+        })    
+
+    }
+    saveTodos()
+}
+
+// function for adding todos
+function addTodo(newTodo){
+    data.todos.unshift(newTodo) // adds the newTodo to the todos in the data node
+    data.todos.pop()
+    renderTodos() // runs the renderTodos function after
+}
+
+$nodes.form.on("submit", function(event){
+    event.preventDefault() // prevents refreshes
+    addTodo($nodes.textInput.val()) // in jQuery, to access the data inside a property, use .val / add the todo
+    $nodes.textInput.val("") // empties the form after submission
+})
+
+loadTodos()
+renderTodos()

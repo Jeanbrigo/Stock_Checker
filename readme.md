@@ -11,8 +11,8 @@ This is an application to check the stock price of any public company, and wheth
 
 ### Wireframes
 
-![Wireframe Homepage](https://i.imgur.com/kDdfyO2.jpeg)
-![Wireframe Stock Result](https://i.imgur.com/aIshnqc.jpg)
+![Wireframe Homepage](https://i.imgur.com/XsGP6dV.jpg)
+![Wireframe Stock Result](https://i.imgur.com/7R1BVNh.jpg)
 
 ### Daily Plan
 
@@ -27,5 +27,5 @@ This is an application to check the stock price of any public company, and wheth
 | 7 | Presentation Day |
 
 ### Link to Project
-[My Project Live Page](https://jeanbrigo.github.io/Project-1/)
+[Stock Checker App](https://jeanbrigo.github.io/Project-1/)
 

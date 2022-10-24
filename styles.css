@@ -1,3 +1,38 @@
+.title {
+    font-family: Futura-Medium;
+    font-size: 4em;
+    color: rgb(94,94,94);
+    text-align: center;
+    margin: 10% 0 0 0;
+
+}
+
+.slogan{
+ text-align: center;
+ color: rgb(94,94,94);
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font: HelveticaNeue;
+    color: rgb(94,94,94);
+    text-align: center;
+}
+
+.submission {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    margin: 40px;
+    
+}
+
+h2 {
+    font: HelveticaNeue-Regular;
+    font-weight: normal;
+}
+
 #hideInfo {
     display: none;
   }
@@ -5,6 +40,7 @@
 #price:hover + #hideInfo{
    
     display: inline;
+    font-size: .8em;
   }
 
 #fourWeeks {
@@ -15,6 +51,67 @@
     display: inline;
 }
 
-div {
-    display: block;
+
+
+previousStocks {
+    text-align: center;
+    border-radius: 7px;
+    height: 20px;
+    padding: 10px 10px 8px 10px;
+    background-color: rgb(127,213,83);
+    color: white;
+    font-size: medium;
+    align-items: center;
+    margin: 20px 20px 10px 20px;
+   
+
+}
+
+.searchBox{
+    border-color: black;
+    border-width: 3px;
+    border-radius: 7px;
+    padding: 15px;
+    width: 275px;
+    height: 15px;
+    font-size: medium;
+    text-align: center;
+    grid-column: 2;
+    margin: 10px 10px 10px 10px
+
+}
+
+.submitButton{
+    grid-column: 2;
+    grid-row: 3;
+    width: fill;
+    color: white;
+    background-color: black;
+    border-radius: 7px;
+    height: 36px;
+    font-size: medium;
+    margin: 10px 10px 10px ;
+}
+
+.spacer{
+    display: flex;
+    justify-content: center;
+
+}
+
+.todos{
+    display: flex;
+    justify-content: center;
+}
+
+.todo{
+    background-color: black;
+    color: white;
+    border-radius: 7px;
+    display: flex;
+    height: 20px;
+    width: fill;
+    font-size: medium;
+    padding: 10px 10px 8px 10px;
+    margin: 2px;
 }
