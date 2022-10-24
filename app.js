@@ -144,7 +144,7 @@ $("input[type=submit]").on("click", (event) => {
 
     // update the screen
     stockChecker(inputText)
-    addTodo($("input[type=text]").val())
+    addTodo(inputText)
 });
  
 
@@ -203,10 +203,10 @@ function renderTodos(){
             // get the text of the thing
             const text = $(event.target).text()// wrap this node in jQuery object
             $todoDiv.on("click", 
-                stockChecker(text)
+                stockChecker(text))
             // get the text of the thing
-            )
             renderTodos()
+            
         })    
     
     }
@@ -220,11 +220,6 @@ function addTodo(newTodo){
     renderTodos() // runs the renderTodos function after
 }
 
-$nodes.form.on("submit", function(event){
-    event.preventDefault() // prevents refreshes
-    addTodo($nodes.textInput.val()) // in jQuery, to access the data inside a property, use .val / add the todo
-    $nodes.textInput.val("") // empties the form after submission
-})
 
 loadTodos()
 renderTodos()
