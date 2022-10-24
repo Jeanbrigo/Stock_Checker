@@ -3,7 +3,7 @@ const apikey = "IJNV4P2J1BEX9AZ5"
 // when hover over stock price, gives all stock info for the day
 // when hover trending gives price for last 4 weeks, if price was higher show green if lower show red
 
-'use strict';
+// 'use strict';
 
 var baseURL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY` // URL for basic price return pull
 
