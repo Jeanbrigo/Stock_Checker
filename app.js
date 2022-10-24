@@ -174,9 +174,6 @@ function loadTodos() {
         // update data with the saved array
         data.todos = savedData.todos.slice(0,5)
     }
-    else{
-        data.todos = json
-    }
 }
 
 
