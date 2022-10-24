@@ -142,7 +142,7 @@ function stockChecker(stock){
 
 // object to hold application data
 const data = {
-    todos: []
+    todos: ["GME","AAPL","TSLA","META","MSFT"]
 }
 
 // object to hold main dom nodes
@@ -173,6 +173,9 @@ function loadTodos() {
         const savedData = json
         // update data with the saved array
         data.todos = savedData.todos.slice(0,5)
+    }
+    else{
+        data.todos = json
     }
 }
 
