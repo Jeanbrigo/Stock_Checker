@@ -162,7 +162,7 @@ previousStocks {
     }
 
     .submitButton{
-    
+        -webkit-border-radius: 0px;
         width: fill;
         color: white;
         background-color: black;
