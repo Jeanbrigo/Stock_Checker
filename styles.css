@@ -17,6 +17,7 @@ body{
     font: HelveticaNeue;
     color: rgb(94,94,94);
     text-align: center;
+    cursor: default;
 }
 
 .submission {
@@ -77,7 +78,7 @@ previousStocks {
     font-size: medium;
     text-align: center;
     grid-column: 2;
-    margin: 10px 10px 10px 10px
+    margin: 10px 10px 10px 10px;
 
 }
 
@@ -91,6 +92,7 @@ previousStocks {
     height: 36px;
     font-size: medium;
     margin: 10px 10px 10px ;
+    cursor: pointer;
 }
 
 .spacer{
@@ -114,4 +116,6 @@ previousStocks {
     font-size: medium;
     padding: 10px 10px 8px 10px;
     margin: 2px;
+    cursor: pointer;
 }
+
