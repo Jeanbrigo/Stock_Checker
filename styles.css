@@ -162,7 +162,7 @@ previousStocks {
     }
 
     .submitButton{
-        -webkit-border-radius: 0px;
+
         width: fill;
         color: white;
         background-color: black;
@@ -171,5 +171,8 @@ previousStocks {
         font-size: medium;
         margin: 10px 10px 10px ;
         cursor: pointer;
+    }
+    input[type="submit"]{
+        -webkit-appearance: none;
     }
 }
