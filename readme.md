@@ -22,10 +22,19 @@ This is an application to check the stock price of any public company, and wheth
 | 2 | Render data to screen |
 | 3 | Create form |
 | 4 | Bug testing, add trend functionality and last checked stocks history |
-| 5 | Website Styling |
+| 5 | Website Styling / Responsive |
 | 6 | Final debugging and styling |
 | 7 | Presentation Day |
 
+### Project Functions
+
+
+
 ### Link to Project
+
 [Stock Checker App](https://jeanbrigo.github.io/Project-1/)
 
+### Plannned future enhancements:
+
+- Adding graphed data
+- Updating price every 5 mins (chosen API max free setting)
