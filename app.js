@@ -142,7 +142,7 @@ function stockChecker(stock){
 
 // object to hold application data
 const data = {
-    todos: ["GME","AAPL","TSLA","META","MSFT"]
+    todos: []
 }
 
 // object to hold main dom nodes
@@ -208,7 +208,8 @@ function renderTodos(){
 // function for adding todos
 function addTodo(newTodo){
     data.todos.unshift(newTodo) // adds the newTodo to the todos in the data node
-    data.todos.pop()
+    if(data.todos.length > 5){
+    data.todos.pop()}
     renderTodos() // runs the renderTodos function after
 }
 
