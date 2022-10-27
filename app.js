@@ -74,7 +74,7 @@ function stockChecker(stock){
 
     const latestDayInfo = JSON.stringify(stock["Time Series (Daily)"][lastDayInput]);
     console.log(latestDayInfo)
-    const latestDayInfoClean = latestDayInfo.replace(/"/g," ")
+    const latestDayInfoClean = latestDayInfo.replace(/"/g," ").replace(/{/g, "").replace(/}/g,"")
 
     // console.log(stock["Weekly Time Series"][lastWeek]["4.close"])
 
