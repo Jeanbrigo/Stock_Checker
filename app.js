@@ -7,7 +7,6 @@ const apikey = "IJNV4P2J1BEX9AZ5"
 
 var baseURL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY` // URL for basic price return pull
 
-
 // Stock Price Tool
 
 function stockChecker(stock){
@@ -134,8 +133,6 @@ function stockChecker(stock){
 };
 
 
-
-
 // ------------------
 // History Generator
 // ------------------
@@ -177,8 +174,6 @@ function loadTodos() {
 }
 
 
-
-
 // function that renders todos to the div
 function renderTodos(){
 
@@ -198,9 +193,7 @@ function renderTodos(){
             stockChecker(text)
             // get the text of the thing
             renderTodos()
-            
         })    
-    
     }
     saveTodos()
 }
