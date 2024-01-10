@@ -5,7 +5,7 @@ const apikey = "IJNV4P2J1BEX9AZ5"
 
 'use strict';
 
-var baseURL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED` // URL for basic price return pull
+var baseURL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY` // URL for basic price return pull
 
 // Stock Price Tool
 
