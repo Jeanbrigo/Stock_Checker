@@ -65,19 +65,19 @@ function stockChecker(stock){
     const last4WeekPrice = parseFloat(stock["Time Series (Daily)"][last4Week]["4. close"]);
     console.log(last4WeekPrice);
 
-        if (lastPrice === undefined){
+        if (typeof lastPrice == 'undefined'){
             lastPrice === lastWeekPrice}
         
-        if (lastWeekPrice === undefined){
+        if (typeof lastWeekPrice == 'undefined'){
             lastWeekPrice === last2WeekPrice}        
         
-        if (last2WeekPrice === undefined){
+        if (typeof last2WeekPrice == 'undefined'){
             last2WeekPrice === last3WeekPrice}
         
-        if (last3WeekPrice === undefined){
+        if (typeof last3WeekPrice == 'undefined'){
             last3WeekPrice === last4WeekPrice}
 
-        if (last4WeekPrice === undefined){
+        if (typeof last4WeekPrice == 'undefined'){
             last4WeekPrice === 0}
 
 
