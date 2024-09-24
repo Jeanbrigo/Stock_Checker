@@ -53,17 +53,30 @@ function stockChecker(stock){
     const lastPrice = parseFloat(stock["Time Series (Daily)"][lastDayInput]["4. close"]);
     console.log(lastPrice);
 
+        if (lastPrice === undefined){
+            lastPrice === lastWeekPrice}
+
     const lastWeekPrice = parseFloat(stock["Time Series (Daily)"][lastWeek]["4. close"]);
     console.log(lastWeekPrice);
+        if (lastWeekPrice === undefined){
+            lastWeekPrice === last2WeekPrice}
+        
 
     const last2WeekPrice = parseFloat(stock["Time Series (Daily)"][last2Week]["4. close"]);
     console.log(last2WeekPrice);
+        if (last2WeekPrice === undefined){
+            last2WeekPrice === last3WeekPrice}
+        
 
     const last3WeekPrice = parseFloat(stock["Time Series (Daily)"][last3Week]["4. close"]);
-    console.log(last3WeekPrice);
+    console.log(last3WeekPrice);        
+        if (last3WeekPrice === undefined){
+            last3WeekPrice === last4WeekPrice}
 
     const last4WeekPrice = parseFloat(stock["Time Series (Daily)"][last4Week]["4. close"]);
-    console.log(last4WeekPrice);
+    console.log(last4WeekPrice);        
+        if (last4WeekPrice === undefined){
+            last4WeekPrice === 0}
 
 
     // average price for the last month trender
